@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard — GroundTruth</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /><link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="dash-root">
+<nav class="site-nav"><div class="wrap"><a href="index.html" class="wordmark"><span class="dot"></span>GroundTruth</a><div class="nav-links"><a href="index.html">Home</a><button id="logout-btn" class="btn btn-ghost btn-sm">Log out</button></div></div></nav>
+<div class="dash-head"><div class="wrap"><div class="dash-greeting"><h1 id="dash-name" style="font-size:2.2rem">Loading…</h1><span id="dash-badge" class="badge" style="display:none">Authority</span></div><p class="lede">Report neighborhood problems and follow their progress.</p></div></div>
+<div class="wrap dash-grid">
+  <div>
+    <div class="panel" style="margin-bottom:24px"><h3>File a report</h3><p class="lede">Share a clear description and the location so the right people can act.</p><div id="report-msg" class="form-msg"></div>
+      <form id="report-form" enctype="multipart/form-data">
+        <div class="field"><label for="report-title">Issue title</label><input id="report-title" name="title" maxlength="160" required placeholder="e.g. Broken streetlight on Lake Road" /></div>
+        <div class="field"><label for="report-description">Description</label><textarea id="report-description" name="description" rows="4" maxlength="5000" required placeholder="What happened, how serious is it, and who is affected?"></textarea></div>
+        <div class="field"><label for="report-area">Area</label><select id="report-area" name="area" required><option value="">Loading areas…</option></select></div>
+        <div class="field"><label for="report-category">Category</label><select id="report-category" name="category" required><option value="">Loading categories…</option></select></div>
+        <div class="field"><label for="report-location">Specific location</label><input id="report-location" name="location" maxlength="255" required placeholder="Street, landmark, or nearby address" /></div>
+        <div class="field"><label for="report-photo">Photo (optional)</label><input id="report-photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" /><small>Use a JPG, PNG, or WebP image. Avoid including people's faces or private information.</small></div>
+        <button type="submit" class="btn btn-primary btn-wide">Submit report</button>
+      </form>
+    </div>
+    <div class="panel"><h3>Your reports</h3><p class="lede">Track updates and see community activity.</p><div id="dash-reports"><div class="empty-note">Loading reports…</div></div></div>
+    <div class="panel" style="margin-top:24px"><h3>Community reports</h3><p class="lede">See issues reported by other residents and support useful reports.</p><div id="community-reports"><div class="empty-note">Loading community reports…</div></div></div>
+  </div>
+  <div>
+    <div class="panel" style="margin-bottom:24px"><h3>Areas</h3><div id="dash-areas"><div class="empty-note">Loading…</div></div></div>
+    <div class="panel"><h3>Categories</h3><div id="dash-categories"><div class="empty-note">Loading…</div></div></div>
+  </div>
+</div>
+<script src="js/api.js"></script><script src="js/main.js"></script>
+</body></html>
